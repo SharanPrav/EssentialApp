@@ -30,6 +30,7 @@
 		B6AA06EF2B825DC40082C43A /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06EE2B825DC40082C43A /* FeedImageDataLoaderCacheDecoratorTests.swift */; };
 		B6AA06F12B8262410082C43A /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06F02B8262410082C43A /* FeedImageDataLoaderSpy.swift */; };
 		B6AA06F32B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06F22B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift */; };
+		B6AA06F72B8267F20082C43A /* FeedImageDataLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06F62B8267F20082C43A /* FeedImageDataLoaderCacheDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		B6AA06EE2B825DC40082C43A /* FeedImageDataLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		B6AA06F02B8262410082C43A /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
 		B6AA06F22B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
+		B6AA06F62B8267F20082C43A /* FeedImageDataLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				B6AA06D92B811C180082C43A /* FeedLoaderWithFallbackComposite.swift */,
 				B6AA06DD2B8123DB0082C43A /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				B6AA06EC2B8259070082C43A /* FeedLoaderCacheDecorator.swift */,
+				B6AA06F62B8267F20082C43A /* FeedImageDataLoaderCacheDecorator.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				B6AA06ED2B8259070082C43A /* FeedLoaderCacheDecorator.swift in Sources */,
 				B6AA068D2B70367D0082C43A /* SceneDelegate.swift in Sources */,
 				B6AA06DE2B8123DB0082C43A /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
+				B6AA06F72B8267F20082C43A /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
