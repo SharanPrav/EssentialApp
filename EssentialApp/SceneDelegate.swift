@@ -18,6 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         try! CoreDataFeedStore(storeURL: localStoreURL)
     }()
     
+    private lazy var localFeedLoader: LocalFeedLoader = {
+        LocalFeedLoader(store: store, currentDate: Date.init)
+    }()
+    
     convenience init(httpClient: HTTPClient, store: FeedStore & FeedImageDataStore) {
         self.init()
         self.httpClient = httpClient
@@ -28,6 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         configureWindow()
+    }
+    
+    func sceneWillResignActive(_ scene: UIScene) {
+        localFeedLoader.validateCache { _ in }
     }
     
     // doing all this in a separate method so it can be tested.
@@ -43,7 +51,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
 //        let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
 //        let localImageLoader = LocalFeedImageDataLoader(store: localStore)
-        let localFeedLoader = LocalFeedLoader(store: store, currentDate: Date.init)
         let localImageLoader = LocalFeedImageDataLoader(store: store)
         
         window?.rootViewController = UINavigationController(
