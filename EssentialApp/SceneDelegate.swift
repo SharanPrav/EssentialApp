@@ -43,7 +43,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
 //        let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
 //        let localImageLoader = LocalFeedImageDataLoader(store: localStore)
-        
         let localFeedLoader = LocalFeedLoader(store: store, currentDate: Date.init)
         let localImageLoader = LocalFeedImageDataLoader(store: store)
         
