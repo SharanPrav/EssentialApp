@@ -9,6 +9,8 @@ extension FeedViewController {
     func simulateAppearance() {
         if !isViewLoaded {
             loadViewIfNeeded()
+            
+            setSmallFrameToPreventRenderingCells()
             replaceRefreshControlWithFakeForiOS17Support()
         }
         
@@ -26,6 +28,11 @@ extension FeedViewController {
         }
 
         refreshControl = fake
+    }
+    
+    // This is an iOS17 related change to prevent tableview from rendering the cells eagerly:
+    private func setSmallFrameToPreventRenderingCells() {
+        tableView.frame = CGRect(x: 0, y: 0, width: 390, height: 1)
     }
     
     @discardableResult
