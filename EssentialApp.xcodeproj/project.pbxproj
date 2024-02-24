@@ -52,6 +52,7 @@
 		B6AA072A2B88D9E90082C43A /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA07292B88D9E90082C43A /* SceneDelegateTests.swift */; };
 		B6AA072C2B88EA2D0082C43A /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA072B2B88EA2C0082C43A /* HTTPClientStub.swift */; };
 		B6AA072E2B88EA680082C43A /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */; };
+		B6AA073B2B88FFD60082C43A /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA073A2B88FFD60082C43A /* UIView+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		B6AA07292B88D9E90082C43A /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		B6AA072B2B88EA2C0082C43A /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
 		B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
+		B6AA073A2B88FFD60082C43A /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 				B6AA06F22B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift */,
 				B6AA072B2B88EA2C0082C43A /* HTTPClientStub.swift */,
 				B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */,
+				B6AA073A2B88FFD60082C43A /* UIView+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				B6AA06E72B823B060082C43A /* FeedLoaderStub.swift in Sources */,
 				B6AA072C2B88EA2D0082C43A /* HTTPClientStub.swift in Sources */,
 				B6AA072A2B88D9E90082C43A /* SceneDelegateTests.swift in Sources */,
+				B6AA073B2B88FFD60082C43A /* UIView+TestHelpers.swift in Sources */,
 				B6AA07252B88C8B00082C43A /* FeedUIIntegrationTests+Localization.swift in Sources */,
 				B6AA071B2B88C8980082C43A /* UIButton+TestHelpers.swift in Sources */,
 				B6AA06E12B8124610082C43A /* XCTestCase+MemoryLeakTracking.swift in Sources */,
