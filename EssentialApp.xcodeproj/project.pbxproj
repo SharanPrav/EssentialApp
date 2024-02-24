@@ -52,6 +52,7 @@
 		B6AA072C2B88EA2D0082C43A /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA072B2B88EA2C0082C43A /* HTTPClientStub.swift */; };
 		B6AA072E2B88EA680082C43A /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */; };
 		B6AA073B2B88FFD60082C43A /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA073A2B88FFD60082C43A /* UIView+TestHelpers.swift */; };
+		B6AA073D2B8AABD10082C43A /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA073C2B8AABD10082C43A /* CombineHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		B6AA072B2B88EA2C0082C43A /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
 		B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
 		B6AA073A2B88FFD60082C43A /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
+		B6AA073C2B8AABD10082C43A /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				B6AA06EC2B8259070082C43A /* FeedLoaderCacheDecorator.swift */,
 				B6AA06F62B8267F20082C43A /* FeedImageDataLoaderCacheDecorator.swift */,
 				B6AA07072B8665650082C43A /* DebuggingSceneDelegate.swift */,
+				B6AA073C2B8AABD10082C43A /* CombineHelpers.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				B6AA07112B88C81D0082C43A /* FeedViewAdapter.swift in Sources */,
 				B6AA07082B8665650082C43A /* DebuggingSceneDelegate.swift in Sources */,
 				B6AA068D2B70367D0082C43A /* SceneDelegate.swift in Sources */,
+				B6AA073D2B8AABD10082C43A /* CombineHelpers.swift in Sources */,
 				B6AA06DE2B8123DB0082C43A /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				B6AA07102B88C81D0082C43A /* WeakRefVirtualProxy.swift in Sources */,
 				B6AA07122B88C81D0082C43A /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
