@@ -9,8 +9,8 @@ public final class FeedUIComposer {
     public static func feedComposedWith(feedLoader: @escaping () -> FeedLoader.Publisher, imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher) -> FeedViewController {
         //        let feedViewModel = FeedViewModel(feedLoader: feedLoader)
         //        let refreshController = FeedRefreshViewController(viewModel: feedViewModel)
-        let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader: { feedLoader().dispatchOnMainQueue() })
-        
+        let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader: feedLoader)
+
         let feedController = makeFeedViewController(
             delegate: presentationAdapter,
             title: FeedPresenter.title)
@@ -18,7 +18,7 @@ public final class FeedUIComposer {
         presentationAdapter.presenter = FeedPresenter(
             feedView: FeedViewAdapter(
                 controller: feedController,
-                imageLoader: { imageLoader($0).dispatchOnMainQueue() }),
+                imageLoader: imageLoader),
             loadingView: WeakRefVirtualProxy(feedController), errorView: WeakRefVirtualProxy(feedController))
         
         //        feedViewModel.onFeedLoad = adaptFeedToCellControllers(forwardingTo: feedController, loader: imageLoader)
@@ -47,14 +47,18 @@ private final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
     func didRequestFeedRefresh() {
         presenter?.didStartLoadingFeed()
         
-        cancellable = feedLoader().sink(receiveCompletion: { [weak self] completion in
-            switch completion {
-            case .finished: break
-            case let .failure(error):
-                self?.presenter?.didFinishLoadingFeed(with: error)
-            }
-        }, receiveValue: { [weak self] feed in
-            self?.presenter?.didFinishLoadingFeed(with: feed)
-        })
+        cancellable = feedLoader()
+            .dispatchOnMainQueue()
+            .sink(
+                receiveCompletion: { [weak self] completion in
+                    switch completion {
+                    case .finished: break
+                        
+                    case let .failure(error):
+                        self?.presenter?.didFinishLoadingFeed(with: error)
+                    }
+                }, receiveValue: { [weak self] feed in
+                    self?.presenter?.didFinishLoadingFeed(with: feed)
+                })
     }
 }
