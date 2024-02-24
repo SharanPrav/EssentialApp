@@ -1,15 +1,15 @@
 import UIKit
 import EssentialFeed
 import EssentialFeediOS
+import Combine
 
 public final class FeedUIComposer {
     private init() {}
     
-    public static func feedComposedWith(feedLoader: FeedLoader, imageLoader: FeedImageDataLoader) -> FeedViewController {
+    public static func feedComposedWith(feedLoader: @escaping () -> FeedLoader.Publisher, imageLoader: @escaping (URL) -> FeedImageDataLoader.Publisher) -> FeedViewController {
         //        let feedViewModel = FeedViewModel(feedLoader: feedLoader)
         //        let refreshController = FeedRefreshViewController(viewModel: feedViewModel)
-        let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader:
-                                                                    MainQueueDispatchDecorator(decoratee: feedLoader))
+        let presentationAdapter = FeedLoaderPresentationAdapter(feedLoader: { feedLoader().dispatchOnMainQueue() })
         
         let feedController = makeFeedViewController(
             delegate: presentationAdapter,
@@ -18,7 +18,7 @@ public final class FeedUIComposer {
         presentationAdapter.presenter = FeedPresenter(
             feedView: FeedViewAdapter(
                 controller: feedController,
-                imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader)),
+                imageLoader: { imageLoader($0).dispatchOnMainQueue() }),
             loadingView: WeakRefVirtualProxy(feedController), errorView: WeakRefVirtualProxy(feedController))
         
         //        feedViewModel.onFeedLoad = adaptFeedToCellControllers(forwardingTo: feedController, loader: imageLoader)
@@ -36,24 +36,25 @@ public final class FeedUIComposer {
 }
 
 private final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
-    private let feedLoader: FeedLoader
+    private let feedLoader: () -> FeedLoader.Publisher
+    private var cancellable: Cancellable?
     var presenter: FeedPresenter?
     
-    init(feedLoader: FeedLoader) {
+    init(feedLoader: @escaping () -> FeedLoader.Publisher) {
         self.feedLoader = feedLoader
     }
     
     func didRequestFeedRefresh() {
         presenter?.didStartLoadingFeed()
         
-        feedLoader.load { [weak self] result in
-            switch result {
-            case let .success(feed):
-                self?.presenter?.didFinishLoadingFeed(with: feed)
-                
+        cancellable = feedLoader().sink(receiveCompletion: { [weak self] completion in
+            switch completion {
+            case .finished: break
             case let .failure(error):
                 self?.presenter?.didFinishLoadingFeed(with: error)
             }
-        }
+        }, receiveValue: { [weak self] feed in
+            self?.presenter?.didFinishLoadingFeed(with: feed)
+        })
     }
 }
