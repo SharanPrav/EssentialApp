@@ -27,4 +27,23 @@ class SceneDelegateTests: XCTestCase {
         
         XCTAssertTrue(topController is FeedViewController, "Expected a feed controller as top view controller, got \(String(describing: topController)) instead")
     }
+    
+    func test_configureWindow_setsWindowAsKeyAndVisible() {
+        let window = UIWindowSpy()
+         let sut = SceneDelegate()
+        sut.window = window
+        sut.configureWindow()
+        
+        XCTAssertEqual(window.makeKeyAndVisibleCallCount, 1, "Expected to make window key and visible")
+    }
+}
+
+// "In iOS 15 and later, the value of this property is true when the window is the key window of its scene. In iOS 14 and earlier, the value of this property is true when the window is the key window in the app."
+//This means, we can only make a UIWindow become key if it's part of a scene.
+// A safer solution is to create a spy subclass:
+private class UIWindowSpy: UIWindow {
+  var makeKeyAndVisibleCallCount = 0
+  override func makeKeyAndVisible() {
+    makeKeyAndVisibleCallCount += 1
+  }
 }
