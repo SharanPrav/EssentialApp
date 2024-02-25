@@ -189,23 +189,19 @@
 		B6AA06892B70367D0082C43A /* EssentialApp */ = {
 			isa = PBXGroup;
 			children = (
+				B6AA073E2B8B68340082C43A /* FallbackComposite & decorator */,
 				B6AA068A2B70367D0082C43A /* AppDelegate.swift */,
 				B6AA068C2B70367D0082C43A /* SceneDelegate.swift */,
 				B6AA068E2B70367D0082C43A /* ViewController.swift */,
 				B6AA070E2B88C81D0082C43A /* FeedUIComposer.swift */,
-				B6AA070F2B88C81D0082C43A /* MainQueueDispatchDecorator.swift */,
 				B6AA070B2B88C81D0082C43A /* WeakRefVirtualProxy.swift */,
 				B6AA070D2B88C81D0082C43A /* FeedImageDataLoaderPresentationAdapter.swift */,
 				B6AA070C2B88C81D0082C43A /* FeedViewAdapter.swift */,
+				B6AA07072B8665650082C43A /* DebuggingSceneDelegate.swift */,
+				B6AA073C2B8AABD10082C43A /* CombineHelpers.swift */,
 				B6AA06932B70367E0082C43A /* Assets.xcassets */,
 				B6AA06952B70367E0082C43A /* LaunchScreen.storyboard */,
 				B6AA06982B70367E0082C43A /* Info.plist */,
-				B6AA06D92B811C180082C43A /* FeedLoaderWithFallbackComposite.swift */,
-				B6AA06DD2B8123DB0082C43A /* FeedImageDataLoaderWithFallbackComposite.swift */,
-				B6AA06EC2B8259070082C43A /* FeedLoaderCacheDecorator.swift */,
-				B6AA06F62B8267F20082C43A /* FeedImageDataLoaderCacheDecorator.swift */,
-				B6AA07072B8665650082C43A /* DebuggingSceneDelegate.swift */,
-				B6AA073C2B8AABD10082C43A /* CombineHelpers.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -213,12 +209,9 @@
 		B6AA06A02B70367E0082C43A /* EssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				B6AA07272B88CA3C0082C43A /* FeedUIIntegrationTests.swift */,
 				B6AA06DF2B8124500082C43A /* Helpers */,
-				B6AA06D72B80FE6C0082C43A /* FeedLoaderWithFallbackCompositeTests.swift */,
-				B6AA06DB2B811C8E0082C43A /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
-				B6AA06E42B8239300082C43A /* FeedLoaderCacheDecoratorTests.swift */,
-				B6AA06EE2B825DC40082C43A /* FeedImageDataLoaderCacheDecoratorTests.swift */,
+				B6AA073F2B8B68870082C43A /* FallbackComposite & decorators */,
+				B6AA07272B88CA3C0082C43A /* FeedUIIntegrationTests.swift */,
 				B6AA07092B88B8560082C43A /* FeedAcceptanceTests.swift */,
 				B6AA07292B88D9E90082C43A /* SceneDelegateTests.swift */,
 			);
@@ -265,6 +258,29 @@
 				B6AA06FE2B863D5E0082C43A /* EssentialAppUIAcceptanceTests.swift */,
 			);
 			path = EssentialAppUIAcceptanceTests;
+			sourceTree = "<group>";
+		};
+		B6AA073E2B8B68340082C43A /* FallbackComposite & decorator */ = {
+			isa = PBXGroup;
+			children = (
+				B6AA06D92B811C180082C43A /* FeedLoaderWithFallbackComposite.swift */,
+				B6AA06DD2B8123DB0082C43A /* FeedImageDataLoaderWithFallbackComposite.swift */,
+				B6AA06EC2B8259070082C43A /* FeedLoaderCacheDecorator.swift */,
+				B6AA06F62B8267F20082C43A /* FeedImageDataLoaderCacheDecorator.swift */,
+				B6AA070F2B88C81D0082C43A /* MainQueueDispatchDecorator.swift */,
+			);
+			path = "FallbackComposite & decorator";
+			sourceTree = "<group>";
+		};
+		B6AA073F2B8B68870082C43A /* FallbackComposite & decorators */ = {
+			isa = PBXGroup;
+			children = (
+				B6AA06D72B80FE6C0082C43A /* FeedLoaderWithFallbackCompositeTests.swift */,
+				B6AA06DB2B811C8E0082C43A /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
+				B6AA06E42B8239300082C43A /* FeedLoaderCacheDecoratorTests.swift */,
+				B6AA06EE2B825DC40082C43A /* FeedImageDataLoaderCacheDecoratorTests.swift */,
+			);
+			path = "FallbackComposite & decorators";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
