@@ -60,7 +60,6 @@ class FeedUIIntegrationTests: XCTestCase {
     func test_pullToRefresh_hidesLoadingIndicatorOnLoaderCompletion() {
         let (sut, loader) = makeSUT()
         
-        sut.simulateAppearance()
         sut.simulateUserInitiatedFeedReload()
         loader.completeFeedLoading(at: 0)
         
