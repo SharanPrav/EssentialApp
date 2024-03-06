@@ -12,7 +12,7 @@ final class LoadResourcePresentationAdapter<Resource, view: ResourceView>: FeedV
         self.loader = loader
     }
     
-    func didRequestFeedRefresh() {
+    func loadResource() {
         presenter?.didStartLoading()
         
         cancellable = loader()
@@ -29,4 +29,20 @@ final class LoadResourcePresentationAdapter<Resource, view: ResourceView>: FeedV
                     self?.presenter?.didFinishLoading(with: resouce)
                 })
     }
+    
+    func didRequestFeedRefresh() {
+        loadResource()
+    }
 }
+
+extension LoadResourcePresentationAdapter: FeedImageCellControllerDelegate {
+    func didRequestImage() {
+        loadResource()
+    }
+
+    func didCancelImageRequest() {
+        cancellable?.cancel()
+        cancellable = nil
+    }
+}
+
