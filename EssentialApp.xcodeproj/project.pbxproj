@@ -43,6 +43,7 @@
 		B6AA072E2B88EA680082C43A /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */; };
 		B6AA073B2B88FFD60082C43A /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA073A2B88FFD60082C43A /* UIView+TestHelpers.swift */; };
 		B6AA073D2B8AABD10082C43A /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA073C2B8AABD10082C43A /* CombineHelpers.swift */; };
+		B6AA07672B966E380082C43A /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA07662B966E380082C43A /* SharedLocalizationTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
 		B6AA073A2B88FFD60082C43A /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
 		B6AA073C2B8AABD10082C43A /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
+		B6AA07662B966E380082C43A /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				B6AA072B2B88EA2C0082C43A /* HTTPClientStub.swift */,
 				B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */,
 				B6AA073A2B88FFD60082C43A /* UIView+TestHelpers.swift */,
+				B6AA07662B966E380082C43A /* SharedLocalizationTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6AA07262B88C8B00082C43A /* FeedUIIntegrationTests+LoaderSpy.swift in Sources */,
+				B6AA07672B966E380082C43A /* SharedLocalizationTestHelpers.swift in Sources */,
 				B6AA071C2B88C8980082C43A /* UIRefreshControl+TestHelper.swift in Sources */,
 				B6AA07242B88C8B00082C43A /* FeedUIIntegrationTests+Assertions.swift in Sources */,
 				B6AA06E32B8124DE0082C43A /* SharedTestHelpers.swift in Sources */,
@@ -574,6 +578,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -599,6 +604,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,7 +627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = abc.EssentialAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -642,7 +648,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = abc.EssentialAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
