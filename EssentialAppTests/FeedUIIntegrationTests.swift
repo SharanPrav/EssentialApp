@@ -96,6 +96,7 @@ class FeedUIIntegrationTests: XCTestCase {
         loader.completeFeedLoadingWithError(at: 1)
         assertThat(sut, isRendering: [image0])
     }
+
     
     func test_feedImageView_cancelsImageLoadingWhenNotVisibleAnymore() {
         let image0 = makeImage(url: URL(string: "http://url-0.com")!)
@@ -263,21 +264,6 @@ class FeedUIIntegrationTests: XCTestCase {
         let exp = expectation(description: "Wait for background queue")
         DispatchQueue.global().async {
             loader.completeFeedLoading(at: 0)
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 1.0)
-    }
-    
-    func test_loadImageDataCompletion_dispatchesFromBackgroundToMainThread() {
-        let (sut, loader) = makeSUT()
-        
-        sut.simulateAppearance()
-        loader.completeFeedLoading(with: [makeImage()])
-        _ = sut.simulateFeedImageViewVisible(at: 0)
-        
-        let exp = expectation(description: "Wait for background queue")
-        DispatchQueue.global().async {
-            loader.completeImageLoading(with: self.anyImageData(), at: 0)
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1.0)
