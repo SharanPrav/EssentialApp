@@ -25,7 +25,7 @@ final class FeedViewAdapter: ResourceView {
             
             adapter.presenter = LoadResourcePresenter(resourceView: WeakRefVirtualProxy(view), loadingView: WeakRefVirtualProxy(view), errorView: WeakRefVirtualProxy(view), mapper: UIImage.tryMake)
             
-            return view
+            return CellController(id: model, view)
         })
     }
 }

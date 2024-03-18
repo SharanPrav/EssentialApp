@@ -1,8 +1,8 @@
 import UIKit
 import EssentialFeediOS
 
-extension ListViewController {
-    func simulateUserInitiatedFeedReload() {
+extension ListViewController {    
+    func simulateUserInitiatedReload() {
         refreshControl?.simulatePullToRefresh()
     }
     
@@ -10,8 +10,7 @@ extension ListViewController {
         if !isViewLoaded {
             loadViewIfNeeded()
             
-            setSmallFrameToPreventRenderingCells()
-            replaceRefreshControlWithFakeForiOS17Support()
+            prepareForFirstAppearance()
         }
         
         beginAppearanceTransition(true, animated: false)
@@ -28,6 +27,11 @@ extension ListViewController {
         }
 
         refreshControl = fake
+    }
+    
+    private func prepareForFirstAppearance() {
+        setSmallFrameToPreventRenderingCells()
+        replaceRefreshControlWithFakeForiOS17Support()
     }
     
     // This is an iOS17 related change to prevent tableview from rendering the cells eagerly:
@@ -82,7 +86,7 @@ extension ListViewController {
     }
     
     func numberOfRenderedFeedImageViews() -> Int {
-        return tableView.numberOfRows(inSection: feedImagesSection)
+        tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: feedImagesSection)
     }
 
     func feedImageView(at row: Int) -> UITableViewCell? {
