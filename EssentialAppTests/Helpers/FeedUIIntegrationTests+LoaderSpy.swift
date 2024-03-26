@@ -1,3 +1,7 @@
+//
+//  Copyright © Essential Developer. All rights reserved.
+//
+
 import Foundation
 import EssentialFeed
 import EssentialFeediOS
