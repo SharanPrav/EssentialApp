@@ -87,7 +87,7 @@ class CommentsUIIntegrationTests: XCTestCase {
         assertThat(sut, isRendering: [comment])
     }
 
-    func test_loadFeedCompletion_dispatchesFromBackgroundToMainThread() {
+    func test_loadCommentsCompletion_dispatchesFromBackgroundToMainThread() {
         let (sut, loader) = makeSUT()
         sut.simulateAppearance()
 
@@ -172,19 +172,5 @@ class CommentsUIIntegrationTests: XCTestCase {
             let error = NSError(domain: "an error", code: 0)
             requests[index].send(completion: .failure(error))
         }
-    }
-}
-
-extension CommentsUIIntegrationTests {
-    private class DummyView: ResourceView {
-        func display(_ viewModel: Any) {}
-    }
-    
-    var commentsTitle: String {
-        ImageCommentsPresenter.title
-    }
-    
-    var loadError: String {
-        LoadResourcePresenter<Any, DummyView>.loadError
     }
 }
