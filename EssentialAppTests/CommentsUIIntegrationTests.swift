@@ -99,7 +99,7 @@ class CommentsUIIntegrationTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
 
-    func test_loadFeedCompletion_rendersErrorMessageOnErrorUntilNextReload() {
+    func test_loadCommentsCompletion_rendersErrorMessageOnErrorUntilNextReload() {
         let (sut, loader) = makeSUT()
 
         sut.simulateAppearance()
@@ -123,6 +123,29 @@ class CommentsUIIntegrationTests: XCTestCase {
 
         sut.simulateErrorViewTap()
         XCTAssertEqual(sut.errorMessage, nil)
+    }
+    
+    func test_deinit_cancelsRunningRequest() {
+        var cancelCallCount = 0
+        
+        var sut: ListViewController?
+        
+        autoreleasepool {
+            sut = CommentsUIComposer.commentsComposedWith(commentsLoader: {
+                PassthroughSubject<[ImageComment], Error>()
+                    .handleEvents(receiveCancel: {
+                        cancelCallCount += 1
+                    }).eraseToAnyPublisher()
+            })
+            
+            sut?.simulateAppearance()
+        }
+        
+        XCTAssertEqual(cancelCallCount, 0)
+        
+        sut = nil
+        
+        XCTAssertEqual(cancelCallCount, 1)
     }
 
     // MARK: - Helpers

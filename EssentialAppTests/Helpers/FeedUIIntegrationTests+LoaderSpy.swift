@@ -54,7 +54,7 @@ extension FeedUIIntegrationTests {
         }
 
         func completeImageLoadingWithError(at index: Int = 0) {
-            imageRequests[index].completion(.failure(anyNSError))
+            imageRequests[index].completion(.failure(anyNSError()))
         }
     }
 }
