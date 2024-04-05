@@ -12,6 +12,27 @@ extension ListViewController {
         endAppearanceTransition()
     }
 
+    private func prepareForFirstAppearance() {
+        setSmallFrameToPreventRenderingCells()
+        replaceRefreshControlWithFakeForiOS17PlusSupport()
+    }
+
+    private func setSmallFrameToPreventRenderingCells() {
+        tableView.frame = CGRect(x: 0, y: 0, width: 390, height: 1)
+    }
+
+    private func replaceRefreshControlWithFakeForiOS17PlusSupport() {
+        let fakeRefreshControl = FakeUIRefreshControl()
+
+        refreshControl?.allTargets.forEach { target in
+            refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
+                fakeRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
+            }
+        }
+
+        refreshControl = fakeRefreshControl
+    }
+    
     func simulateUserInitiatedReload() {
         refreshControl?.simulatePullToRefresh()
     }
@@ -110,27 +131,6 @@ extension ListViewController {
 
     private var feedImagesSection: Int { 0 }
     private var feedLoadMoreSection: Int { 1 }
-
-    private func prepareForFirstAppearance() {
-        setSmallFrameToPreventRenderingCells()
-        replaceRefreshControlWithFakeForiOS17PlusSupport()
-    }
-
-    private func setSmallFrameToPreventRenderingCells() {
-        tableView.frame = CGRect(x: 0, y: 0, width: 390, height: 1)
-    }
-
-    private func replaceRefreshControlWithFakeForiOS17PlusSupport() {
-        let fakeRefreshControl = FakeUIRefreshControl()
-
-        refreshControl?.allTargets.forEach { target in
-            refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
-                fakeRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
-            }
-        }
-
-        refreshControl = fakeRefreshControl
-    }
 
     private class FakeUIRefreshControl: UIRefreshControl {
         private var _isRefreshing = false
