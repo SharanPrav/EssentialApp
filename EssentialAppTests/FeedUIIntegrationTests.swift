@@ -190,7 +190,7 @@ class FeedUIIntegrationTests: XCTestCase {
     
     func test_loadMoreCompletion_dispatchesFromBackgroundToMainThread() {
         let (sut, loader) = makeSUT()
-        sut.loadViewIfNeeded()
+        sut.simulateAppearance()
         loader.completeFeedLoading(at: 0)
         sut.simulateLoadMoreFeedAction()
         
@@ -230,7 +230,7 @@ class FeedUIIntegrationTests: XCTestCase {
     
     func test_loadMoreCompletion_rendersErrorMessageOnError() {
         let (sut, loader) = makeSUT()
-        sut.loadViewIfNeeded()
+        sut.simulateAppearance()
         loader.completeFeedLoading()
         
         sut.simulateLoadMoreFeedAction()
@@ -245,7 +245,7 @@ class FeedUIIntegrationTests: XCTestCase {
     
     func test_tapOnLoadMoreErrorView_loadsMore() {
         let (sut, loader) = makeSUT()
-        sut.loadViewIfNeeded()
+        sut.simulateAppearance()
         loader.completeFeedLoading()
         
         sut.simulateLoadMoreFeedAction()
