@@ -33,6 +33,12 @@ extension ListViewController {
         refreshControl = fakeRefreshControl
     }
     
+    func simulateTapOnLoadMoreFeedError() {
+        let delegate = tableView.delegate
+        let index = IndexPath(row: 0, section: feedLoadMoreSection)
+        delegate?.tableView?(tableView, didSelectRowAt: index)
+    }
+    
     func simulateUserInitiatedReload() {
         refreshControl?.simulatePullToRefresh()
     }
