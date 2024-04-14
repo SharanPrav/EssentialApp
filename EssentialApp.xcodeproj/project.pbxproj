@@ -45,6 +45,7 @@
 		B6AA07672B966E380082C43A /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA07662B966E380082C43A /* SharedLocalizationTestHelpers.swift */; };
 		B6B42CAB2BA8E74800720DF6 /* CommentsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B42CAA2BA8E74800720DF6 /* CommentsUIComposer.swift */; };
 		B6B42CAD2BA8E78C00720DF6 /* CommentsUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B42CAC2BA8E78C00720DF6 /* CommentsUIIntegrationTests.swift */; };
+		B6B42CBD2BCC31A500720DF6 /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B42CBC2BCC31A500720DF6 /* NullStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		B6AA07662B966E380082C43A /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 		B6B42CAA2BA8E74800720DF6 /* CommentsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIComposer.swift; sourceTree = "<group>"; };
 		B6B42CAC2BA8E78C00720DF6 /* CommentsUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIIntegrationTests.swift; sourceTree = "<group>"; };
+		B6B42CBC2BCC31A500720DF6 /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				B6AA068A2B70367D0082C43A /* AppDelegate.swift */,
 				B6AA068C2B70367D0082C43A /* SceneDelegate.swift */,
+				B6B42CBC2BCC31A500720DF6 /* NullStore.swift */,
 				B6AA068E2B70367D0082C43A /* ViewController.swift */,
 				B6AA070E2B88C81D0082C43A /* FeedUIComposer.swift */,
 				B6B42CAA2BA8E74800720DF6 /* CommentsUIComposer.swift */,
@@ -385,6 +388,7 @@
 				B6AA073D2B8AABD10082C43A /* CombineHelpers.swift in Sources */,
 				B6AA07102B88C81D0082C43A /* WeakRefVirtualProxy.swift in Sources */,
 				B6B42CAB2BA8E74800720DF6 /* CommentsUIComposer.swift in Sources */,
+				B6B42CBD2BCC31A500720DF6 /* NullStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
