@@ -20,7 +20,6 @@
 		B6AA06E12B8124610082C43A /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06E02B8124610082C43A /* XCTestCase+MemoryLeakTracking.swift */; };
 		B6AA06E32B8124DE0082C43A /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06E22B8124DE0082C43A /* SharedTestHelpers.swift */; };
 		B6AA06E72B823B060082C43A /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06E62B823B060082C43A /* FeedLoaderStub.swift */; };
-		B6AA06F12B8262410082C43A /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06F02B8262410082C43A /* FeedImageDataLoaderSpy.swift */; };
 		B6AA06F32B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06F22B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift */; };
 		B6AA06FF2B863D5E0082C43A /* EssentialAppUIAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA06FE2B863D5E0082C43A /* EssentialAppUIAcceptanceTests.swift */; };
 		B6AA07082B8665650082C43A /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AA07072B8665650082C43A /* DebuggingSceneDelegate.swift */; };
@@ -95,7 +94,6 @@
 		B6AA06E02B8124610082C43A /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		B6AA06E22B8124DE0082C43A /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		B6AA06E62B823B060082C43A /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
-		B6AA06F02B8262410082C43A /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
 		B6AA06F22B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		B6AA06FC2B863D5E0082C43A /* EssentialAppUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AA06FE2B863D5E0082C43A /* EssentialAppUIAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialAppUIAcceptanceTests.swift; sourceTree = "<group>"; };
@@ -228,7 +226,6 @@
 				B6AA06E02B8124610082C43A /* XCTestCase+MemoryLeakTracking.swift */,
 				B6AA06E22B8124DE0082C43A /* SharedTestHelpers.swift */,
 				B6AA06E62B823B060082C43A /* FeedLoaderStub.swift */,
-				B6AA06F02B8262410082C43A /* FeedImageDataLoaderSpy.swift */,
 				B6AA06F22B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift */,
 				B6AA072B2B88EA2C0082C43A /* HTTPClientStub.swift */,
 				B6AA072D2B88EA680082C43A /* InMemoryFeedStore.swift */,
@@ -407,7 +404,6 @@
 				B6AA06F32B8263DA0082C43A /* XCTestCase+FeedImageDataLoader.swift in Sources */,
 				B6AA070A2B88B8560082C43A /* FeedAcceptanceTests.swift in Sources */,
 				B6AA072E2B88EA680082C43A /* InMemoryFeedStore.swift in Sources */,
-				B6AA06F12B8262410082C43A /* FeedImageDataLoaderSpy.swift in Sources */,
 				B6AA06E72B823B060082C43A /* FeedLoaderStub.swift in Sources */,
 				B6AA072C2B88EA2D0082C43A /* HTTPClientStub.swift in Sources */,
 				B6AA072A2B88D9E90082C43A /* SceneDelegateTests.swift in Sources */,
