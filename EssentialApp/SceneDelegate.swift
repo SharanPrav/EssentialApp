@@ -61,7 +61,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneWillResignActive(_ scene: UIScene) {
-        localFeedLoader.validateCache { _ in }
+        do {
+            try localFeedLoader.validateCache()
+        } catch {
+            logger.error("Failed to validate cache with error: \(error.localizedDescription)")
+        }
     }
     
     // doing all this in a separate method so it can be tested.
@@ -70,9 +74,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //"https://ile-api.essentialdeveloper.com/essential-feed/v1/feed")!
         
         let remoteClient = makeRemoteClient()
-//        let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
-//        let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
-//        let localImageLoader = LocalFeedImageDataLoader(store: localStore)
+
         let localImageLoader = LocalFeedImageDataLoader(store: store)
         
         window?.rootViewController = navigationController
